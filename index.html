@@ -55,12 +55,51 @@
             </div>
         </header>
         <main>
-            <div class="wrapper">
-                <form action="">
-                </form>
-                <section id="sectionTasks">
-                </section>
-            </div>
+            <form action="">
+                <h4 class="m-3">¿Quieres añadir una tarea?</h4>
+                <hr noshade="noshade">
+                <div class="m-3">
+                    <label for="companyName" class="form-label">Nombre de la empresa</label>
+                    <input type="text" class="form-control" id="companyName"
+                        placeholder="Escribe el nombre de la empresa">
+                </div>
+                <div class="m-3">
+                    <label for="dueDate" class="form-label">Fecha de vencimiento</label>
+                    <input type="text" class="form-control" id="dueDate" placeholder="Selecciona una fecha">
+                </div>
+                <div class="m-3">
+                    <label for="taxType" class="form-label">Tipo de impuesto</label>
+                    <select id="taxType" class="form-select" aria-label="Default select example">
+                        <option selected>Seleccione un modelo</option>
+                        <option value="#">Modelo 303 - Iva</option>
+                        <option value="#">Modelo 200 - Impuesto de sociedades</option>
+                        <option value="#">Modelo 115 - Retenciones</option>
+                    </select>
+                </div>
+                <div class="m-3">
+                    <label for="relevanceBtnradio" class="form-label">Importancia</label>
+                    <div class="btn-group form-control p-0" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="relevanceBtnradio" id="btnradio1"
+                            autocomplete="off">
+                        <label class="btn btn-outline-primary btnrad1" for="btnradio1">Baja</label>
+
+                        <input type="radio" class="btn-check" name="relevanceBtnradio" id="btnradio2"
+                            autocomplete="off">
+                        <label class="btn btn-outline-primary btnrad2" for="btnradio2">Media</label>
+
+                        <input type="radio" class="btn-check" name="relevanceBtnradio" id="btnradio3"
+                            autocomplete="off">
+                        <label class="btn btn-outline-primary btnrad3" for="btnradio3">Alta</label>
+                    </div>
+                </div>
+                <div class="form-group m-3">
+                    <label for="comments">Comentarios: </label>
+                    <textarea class="form-control mt-2" id="comments" rows="4"></textarea>
+                </div>
+                <input class="btn btn-primary btn-lg" type="submit" value="Añadir">
+            </form>
+            <section id="sectionTasks">
+            </section>
         </main>
     </div>
 
