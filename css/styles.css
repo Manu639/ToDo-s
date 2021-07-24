@@ -1,5 +1,6 @@
 @import url(reset.css);
 
+/* General styles */
 * {
     box-sizing: border-box;
 }
@@ -14,10 +15,14 @@ body {
     background-color: #fff;
 }
 
+/* Header */
+
 header {
     display: flex;
     flex-wrap: wrap;
 }
+
+/* End General styles */
 
 /* User-Filters Section */
 header>div:first-child {
@@ -28,8 +33,7 @@ header>div:first-child {
     padding: 0.5em;
     margin: 1em;
     border: 1px solid #ddd;
-    box-shadow: 1px 1px 3px grey;
-
+    box-shadow: 0px 1px 3px grey;
 }
 
 header>div:first-child figure {
@@ -89,3 +93,46 @@ header>div:first-child div:last-child form {
 }
 
 /* End User-Filters Section */
+
+
+/* Task Stats */
+
+header>div:last-child {
+    display: flex;
+    background-color: rgba(238, 238, 238, 0.719);
+    flex-wrap: wrap;
+    width: calc(60% - 2em);
+    padding: 0.5em;
+    margin: 1em;
+    border: 1px solid #ddd;
+    box-shadow: 0px 1px 3px grey;
+}
+
+header>div:last-child>div {
+    width: calc(50% - 1em);
+    margin: 0.5em
+}
+
+header>div:last-child>div div,
+header>div:last-child>div p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    font-size: 1.5em;
+}
+
+header>div:last-child>div p {
+    font-size: 4rem;
+}
+
+/* End Task Stats */
+/* End Header */
+
+
+/* Main */
+
+
+
+
+/* End Main */
