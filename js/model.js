@@ -12,7 +12,7 @@ const tasksList = new Array({
     taxType: 'IS',
     dueDate: '25/07/2021',
     relevance: 'Alta',
-    comment: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    comment: "Lorem ipsum dolor. Sint assumenda quam, veritatis dolor facilis rerum.",
     completed: false
 }, {
     idTask: 0,
@@ -20,6 +20,6 @@ const tasksList = new Array({
     taxType: 'Iva',
     dueDate: '20/06/2021',
     relevance: 'Media',
-    comment: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
+    comment: "Lorem ipsum doloreaque inventore commodi aliquam ratione ipsam non optio",
     completed: false
 })
