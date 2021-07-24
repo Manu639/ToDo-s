@@ -8,7 +8,7 @@
 
 let taskFilter = document.querySelector('#taskFilter');
 let taskArea = document.querySelector('.taskArea');
-let headerButtons = document.querySelectorAll('header .btn-group button');
+
 
 
 /* Events */
@@ -27,6 +27,7 @@ function textFilter(event) {
 }
 
 /* Header Relevance Buttons event */
+let headerButtons = document.querySelectorAll('header .btn-group button');
 headerButtons.forEach(button => button.addEventListener('click', captureRelevance))
 
 function captureRelevance(event) {
