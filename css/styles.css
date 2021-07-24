@@ -1,0 +1,91 @@
+@import url(reset.css);
+
+* {
+    box-sizing: border-box;
+}
+
+img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+body {
+    background-color: #fff;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* User-Filters Section */
+header>div:first-child {
+    display: flex;
+    background-color: rgba(238, 238, 238, 0.719);
+    flex-wrap: wrap;
+    width: calc(40% - 2em);
+    padding: 0.5em;
+    margin: 1em;
+    border: 1px solid #ddd;
+    box-shadow: 1px 1px 3px grey;
+
+}
+
+header>div:first-child figure {
+    width: calc(29% - 3px);
+    /*     border-right: 1px solid #ddd; */
+    margin-right: 3px;
+    padding: 1em;
+}
+
+header>div:first-child hr {
+    width: 1px;
+    height: 100%;
+    color: black;
+}
+
+header>div:first-child img {
+    overflow: hidden;
+    border-radius: 50%;
+    margin-bottom: 1em;
+    border: 1px solid black;
+}
+
+header>div:first-child figure h4 {
+    text-align: center;
+    font-weight: bold;
+}
+
+
+header>div:first-child div:last-child {
+    width: calc(70% - 0.5em);
+    padding: 1em;
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 0.5em;
+}
+
+header>div:first-child div:last-child div:first-child {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.btn-outline-warning {
+    color: rgb(255, 166, 0);
+    border: 1px solid orange;
+}
+
+.btn-outline-warning:hover {
+    color: white
+}
+
+header>div:first-child div:last-child form {
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1em;
+}
+
+/* End User-Filters Section */
