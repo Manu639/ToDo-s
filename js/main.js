@@ -6,8 +6,9 @@
                             <p><i class="fas fa-trash-alt"></i></p>
                         </div> --> */
 
-let taskFilter = document.querySelector('#taskFilter')
-let taskArea = document.querySelector('.taskArea')
+let taskFilter = document.querySelector('#taskFilter');
+let taskArea = document.querySelector('.taskArea');
+let headerButtons = document.querySelectorAll('header .btn-group button');
 
 
 /* Events */
@@ -25,6 +26,16 @@ function textFilter(event) {
     printTasks(filteredList)
 }
 
+/* Header Relevance Buttons event */
+headerButtons.forEach(button => button.addEventListener('click', captureRelevance))
+
+function captureRelevance(event) {
+    let relevance = event.target.value
+    filterRelevance(relevance, tasksList)
+}
+/* End Header Relevance Buttons event */
+
+
 /* End Search Event */
 
 
@@ -39,6 +50,13 @@ function searchWord(pWord, pList) {
         }
     })
     return filteredList
+}
+
+function filterRelevance(pRelevance, pList) {
+    taskArea.innerHTML = "";
+    let filteredList = new Array();
+    pList.forEach(element => (element.relevance === pRelevance) ? filteredList.push(element) : "")
+    printTasks(filteredList);
 }
 
 /* End Filter Functions */

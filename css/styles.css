@@ -71,19 +71,42 @@ header>div:first-child div:last-child {
 }
 
 header>div:first-child div:last-child div:first-child {
+    display: flex;
+    flex-wrap: wrap;
     width: 100%;
     align-items: center;
     justify-content: center;
 }
 
+header>div:first-child div:last-child div:first-child label:first-child {
+    width: 100%;
+    font-weight: 700;
+}
+
+header>div:first-child div:last-child div:first-child button {
+    width: calc(33.333% - 1em);
+    font-weight: 700;
+    margin: 0.5em;
+}
+
 .btn-outline-warning {
-    color: rgb(255, 166, 0);
-    border: 1px solid orange;
+    color: darkorange;
+    border-color: darkorange;
+}
+
+.btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
+    border-radius: 10px;
+}
+
+header>div:first-child div:last-child div:first-child button {
+    border-radius: 10px;
 }
 
 .btn-outline-warning:hover {
     color: white
 }
+
+
 
 
 header>div:first-child div:last-child form {
@@ -172,53 +195,25 @@ main form label {
     font-weight: bold;
 }
 
-.btnrad1 {
-    border: 1px solid #198754;
-    color: #198754;
+main form div:nth-child(6) div {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
 }
 
-.btnrad2 {
-    border: 1px solid orange;
-    color: orange;
+main form div:nth-child(6) div label {
+    width: 100%;
 }
 
-.btnrad3 {
-    border: 1px solid #dc3545;
-    color: #dc3545;
+.btn-group>.btn-group:not(:first-child)>.btn,
+.btn-group>.btn:nth-child(n+3),
+.btn-group> :not(.btn-check)+.btn {
+    border-radius: 10px;
 }
 
-.btn-outline-primary:hover.btnrad1 {
-    background-color: #198754;
-    border-color: #198754;
-}
-
-.btn-outline-primary:hover.btnrad2 {
-    background-color: orange;
-    border-color: orange;
-}
-
-.btn-outline-primary:hover.btnrad3 {
-    background-color: #dc3545;
-    border-color: #dc3545;
-}
-
-.btn-check:checked+.btnrad1 {
-    background-color: #198754;
-    color: white;
-    border-color: #198754;
-}
-
-.btn-check:checked+.btnrad2 {
-    background-color: orange;
-    color: white;
-    border-color: orange;
-}
-
-.btn-check:checked+.btnrad3 {
-    background-color: #dc3545;
-    color: white;
-    border-color: #dc3545;
-    ;
+main form div:nth-child(6) div button {
+    width: calc(33.333 - 1em);
+    margin: 0.5em;
 }
 
 .btn-primary.btn-lg {

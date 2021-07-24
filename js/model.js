@@ -3,7 +3,7 @@ const tasksList = new Array({
     company: 'Prueba 1 S.L',
     taxType: 'Iva',
     dueDate: '20/06/2021',
-    relevance: 'Baja',
+    relevance: 'low',
     comment: "Lorem ipsum dolor sit, amet consectetur adipisicing elit.",
     completed: false
 }, {
@@ -11,7 +11,7 @@ const tasksList = new Array({
     company: 'Prueba 2 S.L',
     taxType: 'IS',
     dueDate: '25/07/2021',
-    relevance: 'Alta',
+    relevance: 'high',
     comment: "Lorem ipsum dolor. Sint assumenda quam, veritatis dolor facilis rerum.",
     completed: false
 }, {
@@ -19,7 +19,7 @@ const tasksList = new Array({
     company: 'Prueba 3 S.L',
     taxType: 'Iva',
     dueDate: '20/06/2021',
-    relevance: 'Media',
+    relevance: 'medium',
     comment: "Lorem ipsum doloreaque inventore commodi aliquam ratione ipsam non optio",
     completed: false
 })
