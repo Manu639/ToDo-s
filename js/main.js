@@ -13,7 +13,6 @@ let taskArea = document.querySelector('.taskArea');
 
 /* Events */
 
-/* Search Event */
 let filterInput = document.querySelector('#searchBox')
 filterInput.addEventListener('input', textFilter)
 
@@ -26,7 +25,6 @@ function textFilter(event) {
     printTasks(filteredList)
 }
 
-/* Header Relevance Buttons event */
 let headerButtons = document.querySelectorAll('header .btn-group button');
 headerButtons.forEach(button => button.addEventListener('click', captureRelevance))
 
@@ -34,10 +32,40 @@ function captureRelevance(event) {
     let relevance = event.target.value
     filterRelevance(relevance, tasksList)
 }
-/* End Header Relevance Buttons event */
+
+function deleteTask(event) {
+    let id = parseInt(event.target.dataset.id)
+    let indexTaskToDelete = tasksList.findIndex(task => task.idTask === id)
+    tasksList.splice(indexTaskToDelete, 1)
+    console.log(tasksList)
+    taskArea.innerHTML = "";
+    printTasks(tasksList)
+}
+
+let addTaskButton = document.querySelector('#addTaskButton');
+addTaskButton.addEventListener('click', addTask)
+
+function addTask(event) {
+    event.preventDefault();
+    let newCompanyName = document.querySelector('#companyName').value;
+    let newDueDate = document.querySelector('#dueDate').value;
+    let newTaxType = document.querySelector('#taxType').value;
+    let newRelevance = document.querySelector('div.btn-group>input:checked').value
+    let newComment = document.querySelector('#comments').value
+    newTask = {
+        idTask: Math.floor(Math.random() * 1001),
+        company: newCompanyName,
+        taxType: newTaxType,
+        dueDate: newDueDate,
+        relevance: newRelevance,
+        comment: newComment,
+    }
+    tasksList.push(newTask)
+    printTask(newTask)
+}
 
 
-/* End Search Event */
+/* End Events */
 
 
 /* Data Filter Functions */
@@ -69,13 +97,19 @@ function printTasks(pList) {
 
 function printTask(pTask) {
     let div = document.createElement('div');
-
+    let p = document.createElement('p');
+    let i = document.createElement('i');
     div.classList = ('task')
     div.innerHTML = `<p>${pTask.company}</p>
                      <p>${pTask.taxType}</p>
                      <p> ${pTask.dueDate}</p>
-                     <p>${pTask.comment}</p>
-                     <p><i class="fas fa-trash-alt"></i></p>`
+                     <p>${pTask.comment}</p>`
+
+    i.classList = ('fas fa-trash-alt')
+    i.dataset.id = pTask.idTask
+    i.addEventListener('click', deleteTask)
+    p.appendChild(i);
+    div.appendChild(p);
 
     taskArea.appendChild(div)
 }

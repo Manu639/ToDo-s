@@ -79,24 +79,29 @@
                     <label for="taxType" class="form-label">Tipo de impuesto</label>
                     <select id="taxType" class="form-select" aria-label="Default select example">
                         <option selected>Seleccione un modelo</option>
-                        <option value="#">Modelo 303 - Iva</option>
-                        <option value="#">Modelo 200 - Impuesto de sociedades</option>
-                        <option value="#">Modelo 115 - Retenciones</option>
+                        <option value="Modelo 303 - Iva">Modelo 303 - Iva</option>
+                        <option value="Modelo 200 - IS">Modelo 200 - Impuesto de sociedades</option>
+                        <option value="Modelo 115 - Retenciones">Modelo 115 - Retenciones</option>
                     </select>
                 </div>
                 <div class="m-3">
-                    <div class="btn-group" role="group" aria-label="Basic outlined example">
-                        <label for="relevanceBtnradio" class="form-label">Importancia:</label>
-                        <button type="button" class="btn btn-outline-success" value='low'>Baja</button>
-                        <button type="button" class="btn btn-outline-warning" value='medium'>Media</button>
-                        <button type="button" class="btn btn-outline-danger" value='high'>Alta</button>
+                    <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off"
+                            value="low">
+                        <label class="btn btn-outline-primary" for="btnradio1">Baja</label>
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"
+                            value="medium">
+                        <label class="btn btn-outline-primary" for="btnradio2">Media</label>
+                        <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off"
+                            value="high">
+                        <label class="btn btn-outline-primary" for="btnradio3">Alta</label>
                     </div>
                 </div>
                 <div class="form-group m-3">
                     <label for="comments">Comentarios: </label>
                     <textarea class="form-control mt-2" id="comments" rows="4"></textarea>
                 </div>
-                <input class="btn btn-primary btn-lg" type="submit" value="Añadir">
+                <input id="addTaskButton" class="btn btn-primary btn-lg" type="submit" value="Añadir">
             </form>
             <section id="sectionTasks">
                 <div class="labels">

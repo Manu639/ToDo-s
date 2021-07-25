@@ -202,8 +202,26 @@ main form div:nth-child(6) div {
 }
 
 main form div:nth-child(6) div label {
-    width: 100%;
+    width: calc(33.333% - 1em);
+    margin: 0.5em;
+    font-weight: 700;
 }
+
+main form div:nth-child(6) div label:nth-child(2) {
+    color: #198754;
+    border-color: #198754;
+}
+
+main form div:nth-child(6) div label:nth-child(4) {
+    color: darkorange;
+    border-color: darkorange;
+}
+
+main form div:nth-child(6) div label:nth-child(6) {
+    color: #dc3545;
+    border-color: #dc3545;
+}
+
 
 .btn-group>.btn-group:not(:first-child)>.btn,
 .btn-group>.btn:nth-child(n+3),
