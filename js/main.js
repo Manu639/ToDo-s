@@ -1,14 +1,6 @@
-/*                     <div class="task">
-                            <p>Nombre</p>
-                            <p>Modelo</p>
-                            <p> Fecha</p>
-                            <p>Comentario</p>
-                            <p><i class="fas fa-trash-alt"></i></p>
-                        </div> --> */
-
+localStorage.setItem('tasks', JSON.stringify(tasksList))
 let taskFilter = document.querySelector('#taskFilter');
 let taskArea = document.querySelector('.taskArea');
-
 
 
 /* Events */
@@ -19,10 +11,10 @@ filterInput.addEventListener('input', textFilter)
 
 function textFilter(event) {
     event.preventDefault();
+    actualTasksList = JSON.parse(localStorage.getItem('tasks'))
     taskArea.innerHTML = "";
     let word = event.target.value;
-    console.log(word)
-    let filteredList = searchWord(word, tasksList);
+    let filteredList = searchWord(word, actualTasksList);
     printTasks(filteredList)
 }
 
@@ -32,7 +24,8 @@ headerButtons.forEach(button => button.addEventListener('click', captureRelevanc
 
 function captureRelevance(event) {
     let relevance = event.target.value
-    filterRelevance(relevance, tasksList)
+    actualTasksList = JSON.parse(localStorage.getItem('tasks'))
+    filterRelevance(relevance, actualTasksList)
 }
 /* End Header Relevance Buttons event */
 
