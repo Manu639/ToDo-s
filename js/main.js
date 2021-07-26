@@ -1,4 +1,14 @@
+<<<<<<< HEAD
 localStorage.setItem('tasks', JSON.stringify(tasksList))
+=======
+/*                     <div class="task">
+                            <p>Nombre</p>
+                            <p>Modelo</p>
+                            <p> Fecha</p>
+                            <p>Comentario</p>
+                            <p><i class="fas fa-trash-alt"></i></p>
+                        </div> --> */
+>>>>>>> feature_localStorage
 let taskArea = document.querySelector('.taskArea');
 
 
