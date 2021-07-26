@@ -1,10 +1,15 @@
-localStorage.setItem('tasks', JSON.stringify(tasksList))
-let taskArea = document.querySelector('.taskArea');
+//Checking localStorage
+let lastList = [];
+let localTasksList = (localStorage.getItem('tasks') === null) ? localStorage.setItem('tasks', JSON.stringify(tasksList)) : JSON.parse(localStorage.getItem('tasks'))
+localTasksList = JSON.parse(localStorage.getItem('tasks'));
 
+let taskArea = document.querySelector('.taskArea');
+let filterInput = document.querySelector('#searchBox');
+let headerButtons = document.querySelectorAll('header .btn-group button');
+let addTaskButton = document.querySelector('#addTaskButton');
 
 /* Events */
 
-let filterInput = document.querySelector('#searchBox')
 filterInput.addEventListener('input', textFilter)
 
 function textFilter(event) {
@@ -13,32 +18,36 @@ function textFilter(event) {
     taskArea.innerHTML = "";
     let word = event.target.value;
     let filteredList = searchWord(word, actualTasksList);
+    lastList = filteredList
     printTasks(filteredList)
 }
 
-let headerButtons = document.querySelectorAll('header .btn-group button');
 headerButtons.forEach(button => button.addEventListener('click', captureRelevance))
 
 function captureRelevance(event) {
     let relevance = event.target.value
     actualTasksList = JSON.parse(localStorage.getItem('tasks'))
-    filterRelevance(relevance, actualTasksList)
+    lastList = filterRelevance(relevance, actualTasksList)
+    printTasks(lastList)
 }
 
 function deleteTask(event) {
     let id = parseInt(event.target.dataset.id)
-    let indexTaskToDelete = tasksList.findIndex(task => task.idTask === id)
-    tasksList.splice(indexTaskToDelete, 1)
-    console.log(tasksList)
+    actualTasksList = JSON.parse(localStorage.getItem('tasks'))
+    let indexTaskToDelete = actualTasksList.findIndex(task => task.idTask === id)
+    let indexLastList = lastList.findIndex(task => task.id === id);
+    actualTasksList.splice(indexTaskToDelete, 1)
+    lastList.splice(indexLastList, 1)
     taskArea.innerHTML = "";
-    printTasks(tasksList)
+    printTasks(lastList)
+    localStorage.setItem('tasks', JSON.stringify(actualTasksList))
 }
 
-let addTaskButton = document.querySelector('#addTaskButton');
 addTaskButton.addEventListener('click', addTask)
 
 function addTask(event) {
     event.preventDefault();
+    let addTaskForm = document.querySelector('main>form');
     let newCompanyName = document.querySelector('#companyName');
     let newDueDate = document.querySelector('#dueDate');
     let newTaxType = document.querySelector('#taxType');
@@ -53,17 +62,15 @@ function addTask(event) {
         relevance: newRelevance.value,
         comment: newComment.value,
     }
-    tasksList.push(newTask)
+    actualTasksList = JSON.parse(localStorage.getItem('tasks'))
+    console.log(actualTasksList)
+    actualTasksList.push(newTask)
+    console.log(actualTasksList)
+    localStorage.setItem('tasks', JSON.stringify(actualTasksList))
     printTask(newTask)
-
-    newCompanyName.reset()
-    newDueDate.reset()
-    newTaxType.reset()
-    newRelevance.reset()
-    newComment.reset()
+    addTaskForm.reset()
 
 }
-
 
 /* End Events */
 
@@ -85,7 +92,7 @@ function filterRelevance(pRelevance, pList) {
     taskArea.innerHTML = "";
     let filteredList = new Array();
     pList.forEach(element => (element.relevance === pRelevance) ? filteredList.push(element) : "")
-    printTasks(filteredList);
+    return filteredList;
 }
 
 /* End Filter Functions */
@@ -115,4 +122,4 @@ function printTask(pTask) {
 }
 /* End Print Functions */
 
-printTasks(tasksList)
+printTasks(localTasksList)
