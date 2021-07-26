@@ -22,4 +22,28 @@ const tasksList = new Array({
     relevance: 'medium',
     comment: "Lorem ipsum doloreaque inventore commodi aliquam ratione ipsam non optio",
     completed: false
+}, {
+    idTask: 0,
+    company: 'Prueba 3 S.L',
+    taxType: 'Iva',
+    dueDate: '20/06/2021',
+    relevance: 'medium',
+    comment: "Lorem ipsum doloreaque inventore commodi aliquam ratione ipsam non optio",
+    completed: false
+}, {
+    idTask: 0,
+    company: 'Prueba 3 S.L',
+    taxType: 'Iva',
+    dueDate: '20/06/2021',
+    relevance: 'medium',
+    comment: "Lorem ipsum doloreaque inventore commodi aliquam ratione ipsam non optio",
+    completed: false
+}, {
+    idTask: 0,
+    company: 'Prueba 3 S.L',
+    taxType: 'Iva',
+    dueDate: '20/06/2021',
+    relevance: 'medium',
+    comment: "Lorem ipsum doloreaque inventore commodi aliquam ratione ipsam non optio",
+    completed: false
 })
