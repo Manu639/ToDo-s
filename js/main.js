@@ -1,5 +1,4 @@
 //Checking localStorage
-let lastList = [];
 let localTasksList = (localStorage.getItem('tasks') === null) ? localStorage.setItem('tasks', JSON.stringify(tasksList)) : JSON.parse(localStorage.getItem('tasks'))
 localTasksList = JSON.parse(localStorage.getItem('tasks'));
 
@@ -18,7 +17,6 @@ function textFilter(event) {
     taskArea.innerHTML = "";
     let word = event.target.value;
     let filteredList = searchWord(word, actualTasksList);
-    lastList = filteredList
     printTasks(filteredList)
 }
 
@@ -27,20 +25,18 @@ headerButtons.forEach(button => button.addEventListener('click', captureRelevanc
 function captureRelevance(event) {
     let relevance = event.target.value
     actualTasksList = JSON.parse(localStorage.getItem('tasks'))
-    lastList = filterRelevance(relevance, actualTasksList)
-    printTasks(lastList)
+    filteredList = filterRelevance(relevance, actualTasksList)
+    printTasks(filteredList)
 }
 
 function deleteTask(event) {
     let id = parseInt(event.target.dataset.id)
     actualTasksList = JSON.parse(localStorage.getItem('tasks'))
     let indexTaskToDelete = actualTasksList.findIndex(task => task.idTask === id)
-    let indexLastList = lastList.findIndex(task => task.id === id);
     actualTasksList.splice(indexTaskToDelete, 1)
-    lastList.splice(indexLastList, 1)
     taskArea.innerHTML = "";
-    printTasks(lastList)
     localStorage.setItem('tasks', JSON.stringify(actualTasksList))
+    printTasks(actualTasksList)
 }
 
 addTaskButton.addEventListener('click', addTask)
@@ -63,9 +59,8 @@ function addTask(event) {
         comment: newComment.value,
     }
     actualTasksList = JSON.parse(localStorage.getItem('tasks'))
-    console.log(actualTasksList)
     actualTasksList.push(newTask)
-    console.log(actualTasksList)
+    lastList = actualTasksList;
     localStorage.setItem('tasks', JSON.stringify(actualTasksList))
     printTask(newTask)
     addTaskForm.reset()
