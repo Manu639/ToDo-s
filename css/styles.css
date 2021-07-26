@@ -284,9 +284,11 @@ main section {
     display: flex;
     flex-direction: column;
     width: 100%;
+    max-height: 400px;
     padding: 1em;
     padding-top: 0em;
     min-height: 80%;
+    overflow: auto;
 }
 
 .task {
@@ -301,21 +303,13 @@ main section {
     text-align: center;
     margin: 0.8em 0em;
     min-height: 2.5em;
-    /*     position: relative;
-    overflow: hidden; */
-    /*     background-color: rgba(25, 135, 84, 0.3);
-    background-color: rgba(220, 53, 69, 0.3);
-    background-color: rgba(255, 140, 0, 0.3); */
 }
 
-/* .task>div {
-    position: absolute;
-    left: 17px;
-    border-radius: 50%;
-    height: 30px;
-    width: 30px;
-    background-color: rgba(25, 135, 84, 0.7);
-} */
+.task>p:nth-child(4) {
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
 
 .task p {
     width: 20%;
