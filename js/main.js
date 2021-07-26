@@ -1,5 +1,4 @@
 localStorage.setItem('tasks', JSON.stringify(tasksList))
-let taskFilter = document.querySelector('#taskFilter');
 let taskArea = document.querySelector('.taskArea');
 
 
@@ -40,21 +39,29 @@ addTaskButton.addEventListener('click', addTask)
 
 function addTask(event) {
     event.preventDefault();
-    let newCompanyName = document.querySelector('#companyName').value;
-    let newDueDate = document.querySelector('#dueDate').value;
-    let newTaxType = document.querySelector('#taxType').value;
-    let newRelevance = document.querySelector('div.btn-group>input:checked').value
-    let newComment = document.querySelector('#comments').value
+    let newCompanyName = document.querySelector('#companyName');
+    let newDueDate = document.querySelector('#dueDate');
+    let newTaxType = document.querySelector('#taxType');
+    let newRelevance = document.querySelector('div.btn-group>input:checked')
+    let newComment = document.querySelector('#comments')
+
     newTask = {
         idTask: Math.floor(Math.random() * 1001),
-        company: newCompanyName,
-        taxType: newTaxType,
-        dueDate: newDueDate,
-        relevance: newRelevance,
-        comment: newComment,
+        company: newCompanyName.value,
+        taxType: newTaxType.value,
+        dueDate: newDueDate.value,
+        relevance: newRelevance.value,
+        comment: newComment.value,
     }
     tasksList.push(newTask)
     printTask(newTask)
+
+    newCompanyName.reset()
+    newDueDate.reset()
+    newTaxType.reset()
+    newRelevance.reset()
+    newComment.reset()
+
 }
 
 
@@ -109,5 +116,3 @@ function printTask(pTask) {
 /* End Print Functions */
 
 printTasks(tasksList)
-
-searchWord('IVA', tasksList)
