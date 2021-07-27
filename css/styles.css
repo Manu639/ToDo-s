@@ -178,6 +178,25 @@ main form div:nth-child(6) div label {
     width: calc(100% - 20px);
 }
 
+.btn-check:focus+.btn,
+.btn:focus {
+    outline: 0;
+    box-shadow: 0 0 0 0rem;
+}
+
+.btn-outline-warning {
+    color: darkorange;
+    border-color: darkorange;
+}
+
+.btn-check:hover+.btn-outline-warning {
+    color: white;
+}
+
+.btn-check:checked+.btn-outline-warning {
+    color: white;
+}
+
 /* End Form */
 
 
