@@ -4,7 +4,7 @@ localTasksList = JSON.parse(localStorage.getItem('tasks'));
 
 let taskArea = document.querySelector('.taskArea');
 let filterInput = document.querySelector('#searchBox');
-let headerButtons = document.querySelectorAll('header .btn-group button');
+let headerButtons = document.querySelectorAll('header .btn-group input');
 let addTaskButton = document.querySelector('#addTaskButton');
 
 /* Events */
