@@ -79,10 +79,10 @@ function addTask(event) {
     }
     actualTasksList = JSON.parse(localStorage.getItem('tasks'))
     actualTasksList.push(newTask)
-    lastList = actualTasksList;
     localStorage.setItem('tasks', JSON.stringify(actualTasksList))
-    printTask(newTask)
     pendingTasks.innerHTML = actualTasksList.length;
+    urgentTasks.innerText = filterRelevance('high', actualTasksList).length;
+    printTasks(actualTasksList)
     addTaskForm.reset()
 
 }
