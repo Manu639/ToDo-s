@@ -267,15 +267,21 @@ main section {
     min-height: 2.5em;
 }
 
+.task p {
+    width: 20%;
+}
+
 .task>p:nth-child(4) {
+    width: 20%;
     overflow: hidden;
     white-space: nowrap;
     text-overflow: ellipsis;
 }
 
-.task p {
-    width: 20%;
+.task>p:nth-child(5) {
+    padding-left: 7em;
 }
+
 
 .task i {
     font-size: 1.25em;

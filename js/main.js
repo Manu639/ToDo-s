@@ -6,6 +6,8 @@ let taskArea = document.querySelector('.taskArea');
 let filterInput = document.querySelector('#searchBox');
 let headerButtons = document.querySelectorAll('header .btn-group input');
 let addTaskButton = document.querySelector('#addTaskButton');
+let pendingTasks = document.querySelector('#totalTasks')
+let urgentTasks = document.querySelector('#totalUrgentTasks')
 
 /* Formating date */
 function formatDate(pObjectDate) {
@@ -51,6 +53,8 @@ function deleteTask(event) {
     actualTasksList.splice(indexTaskToDelete, 1)
     taskArea.innerHTML = "";
     localStorage.setItem('tasks', JSON.stringify(actualTasksList))
+    pendingTasks.innerHTML = actualTasksList.length;
+    urgentTasks.innerHTML = filterRelevance('high', actualTasksList).length;
     printTasks(actualTasksList)
 }
 
@@ -78,6 +82,7 @@ function addTask(event) {
     lastList = actualTasksList;
     localStorage.setItem('tasks', JSON.stringify(actualTasksList))
     printTask(newTask)
+    pendingTasks.innerHTML = actualTasksList.length;
     addTaskForm.reset()
 
 }
@@ -125,9 +130,24 @@ function printTask(pTask) {
     i.addEventListener('click', deleteTask)
     p.appendChild(i);
     div.appendChild(p);
-
+    let color
+    switch (pTask.relevance) {
+        case 'high':
+            color = '#dc3545'
+            break;
+        case 'medium':
+            color = 'darkorange'
+            break;
+        case 'low':
+            color = '#198754'
+            break;
+    }
+    div.style.borderLeft = `5px solid ${color}`
+    div.style.borderRight = `5px solid ${color}`
     taskArea.appendChild(div)
 }
 /* End Print Functions */
 
+pendingTasks.innerText = localTasksList.length;
+urgentTasks.innerText = filterRelevance('high', localTasksList).length;
 printTasks(localTasksList)
