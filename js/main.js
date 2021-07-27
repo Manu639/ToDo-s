@@ -1,4 +1,4 @@
-//Checking localStorage
+//Initializating localStorage
 let localTasksList = (localStorage.getItem('tasks') === null) ? localStorage.setItem('tasks', JSON.stringify(tasksList)) : JSON.parse(localStorage.getItem('tasks'))
 localTasksList = JSON.parse(localStorage.getItem('tasks'));
 
@@ -7,8 +7,23 @@ let filterInput = document.querySelector('#searchBox');
 let headerButtons = document.querySelectorAll('header .btn-group input');
 let addTaskButton = document.querySelector('#addTaskButton');
 
-/* Events */
+/* Formating date */
+function formatDate(pObjectDate) {
+    let dd = pObjectDate.getDate();
+    let mm = pObjectDate.getMonth() + 1;
+    let yyyy = pObjectDate.getFullYear();
+    if (dd < 10) {
+        dd = '0' + dd;
+    }
 
+    if (mm < 10) {
+        mm = '0' + mm;
+    }
+    let formatedDate = dd + '/' + mm + '/' + yyyy;
+    return formatedDate
+}
+
+/* Events */
 filterInput.addEventListener('input', textFilter)
 
 function textFilter(event) {
@@ -54,7 +69,7 @@ function addTask(event) {
         idTask: Math.floor(Math.random() * 1001),
         company: newCompanyName.value,
         taxType: newTaxType.value,
-        dueDate: newDueDate.value,
+        dueDate: formatDate(new Date(newDueDate.value)),
         relevance: newRelevance.value,
         comment: newComment.value,
     }
@@ -66,9 +81,7 @@ function addTask(event) {
     addTaskForm.reset()
 
 }
-
 /* End Events */
-
 
 /* Data Filter Functions */
 function searchWord(pWord, pList) {
