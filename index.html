@@ -34,11 +34,20 @@
                 </figure>
                 <hr noshade="noshade">
                 <div id="configFilters">
-                    <div class="btn-group" role="group" aria-label="Basic outlined example">
-                        <label for="relevanceBtnradio" class="form-label">Importancia:</label>
-                        <button type="button" class="btn btn-outline-success" value="low">Baja</button>
-                        <button type="button" class="btn btn-outline-warning" value='medium'>Media</button>
-                        <button type="button" class="btn btn-outline-danger" value='high'>Alta</button>
+                    <div class="btn-group" role="group" aria-label="Basic checkbox toggle button group">
+                        <input type="checkbox" class="btn-check btn-outline-success" id="btncheck1" value="low"
+                            autocomplete="off">
+                        <label class="btn btn-outline-success rounded-3 fw-bold border-2 m-1"
+                            for="btncheck1">Baja</label>
+
+                        <input type="checkbox" class="btn-check btn-outline-warning" id="btncheck2" value="medium"
+                            autocomplete="off">
+                        <label class="btn btn-outline-warning rounded-3 fw-bold border-2 m-1"
+                            for="btncheck2">Media</label>
+
+                        <input type="checkbox" class="btn-check" id="btncheck3" value="high" autocomplete="off">
+                        <label class="btn btn-outline-danger rounded-3 fw-bold border-2 m-1"
+                            for="btncheck3">Alta</label>
                     </div>
                     <form id="taskFilter" class=" d-flex">
                         <label for="companyName" class="form-label">Buscador: </label>
@@ -90,13 +99,13 @@
                     <div class="btn-group" role="group" aria-label="Basic radio toggle button group">
                         <input type="radio" class="btn-check" name="btnradio" id="btnradio1" autocomplete="off"
                             value="low">
-                        <label class="btn btn-outline-success rounded-3" for="btnradio1">Baja</label>
+                        <label class="btn btn-outline-success rounded-3 border-2" for="btnradio1">Baja</label>
                         <input type="radio" class="btn-check" name="btnradio" id="btnradio2" autocomplete="off"
                             value="medium">
-                        <label class="btn btn-outline-warning rounded-3" for="btnradio2">Media</label>
+                        <label class="btn btn-outline-warning rounded-3 border-2" for="btnradio2">Media</label>
                         <input type="radio" class="btn-check" name="btnradio" id="btnradio3" autocomplete="off"
                             value="high">
-                        <label class="btn btn-outline-danger rounded-3" for="btnradio3">Alta</label>
+                        <label class="btn btn-outline-danger rounded-3 " for="btnradio3">Alta</label>
                     </div>
                 </div>
                 <div class="form-group m-3">

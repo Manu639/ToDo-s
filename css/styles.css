@@ -15,6 +15,24 @@ body {
     background-color: #fff;
 }
 
+.btn-outline-warning {
+    color: darkorange;
+    border-color: darkorange;
+}
+
+.btn-outline-warning:hover {
+    color: white;
+}
+
+.btn-check:hover+.btn-outline-warning {
+    color: white;
+}
+
+.btn-check:checked+.btn-outline-warning {
+    color: white;
+}
+
+
 /* Header */
 
 header {
@@ -182,19 +200,6 @@ main form div:nth-child(6) div label {
 .btn:focus {
     outline: 0;
     box-shadow: 0 0 0 0rem;
-}
-
-.btn-outline-warning {
-    color: darkorange;
-    border-color: darkorange;
-}
-
-.btn-check:hover+.btn-outline-warning {
-    color: white;
-}
-
-.btn-check:checked+.btn-outline-warning {
-    color: white;
 }
 
 /* End Form */
