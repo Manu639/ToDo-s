@@ -73,12 +73,13 @@
                 </div>
                 <div class="m-3">
                     <label for="dueDate" class="form-label">Fecha de vencimiento</label>
-                    <input type="date" class="form-control" id="dueDate" placeholder="Selecciona una fecha">
+                    <input type="text" class="form-control" onfocus="(this.type='date')" onblur="(this.type='text')"
+                        id="dueDate" placeholder="Selecciona una fecha">
                 </div>
                 <div class="m-3">
                     <label for="taxType" class="form-label">Tipo de impuesto</label>
                     <select id="taxType" class="form-select" aria-label="Default select example">
-                        <option selected>Seleccione un modelo</option>
+                        <option selected>Selecciona un modelo</option>
                         <option value="Modelo 303 - Iva">Modelo 303 - Iva</option>
                         <option value="Modelo 200 - IS">Modelo 200 - Impuesto de sociedades</option>
                         <option value="Modelo 115 - Retenciones">Modelo 115 - Retenciones</option>

@@ -22,9 +22,6 @@ header {
     flex-wrap: wrap;
 }
 
-/* End General styles */
-
-/* User-Filters Section */
 header>div:first-child {
     display: flex;
     background-color: rgba(238, 238, 238, 0.719);
@@ -38,7 +35,6 @@ header>div:first-child {
 
 header>div:first-child figure {
     width: calc(29% - 3px);
-    /*     border-right: 1px solid #ddd; */
     margin-right: 3px;
     padding: 1em;
 }
@@ -89,26 +85,6 @@ header>div:first-child div:last-child div:first-child button {
     margin: 0.5em;
 }
 
-.btn-outline-warning {
-    color: darkorange;
-    border-color: darkorange;
-}
-
-.btn-group>.btn:not(:last-child):not(.dropdown-toggle) {
-    border-radius: 10px;
-}
-
-header>div:first-child div:last-child div:first-child button {
-    border-radius: 10px;
-}
-
-.btn-outline-warning:hover {
-    color: white
-}
-
-
-
-
 header>div:first-child div:last-child form {
     width: 100%;
     justify-content: center;
@@ -121,15 +97,6 @@ header>div:first-child div:last-child form {
 header>div:first-child div:last-child form label {
     font-weight: 700;
 }
-
-
-
-
-
-/* End User-Filters Section */
-
-
-/* Task Stats */
 
 header>div:last-child {
     display: flex;
@@ -160,7 +127,6 @@ header>div:last-child>div p {
     font-size: 4rem;
 }
 
-/* End Task Stats */
 /* End Header */
 
 /* Main */
@@ -205,33 +171,6 @@ main form div:nth-child(6) div label {
     width: calc(33.333% - 1em);
     margin: 0.5em;
     font-weight: 700;
-}
-
-main form div:nth-child(6) div label:nth-child(2) {
-    color: #198754;
-    border-color: #198754;
-}
-
-main form div:nth-child(6) div label:nth-child(4) {
-    color: darkorange;
-    border-color: darkorange;
-}
-
-main form div:nth-child(6) div label:nth-child(6) {
-    color: #dc3545;
-    border-color: #dc3545;
-}
-
-
-.btn-group>.btn-group:not(:first-child)>.btn,
-.btn-group>.btn:nth-child(n+3),
-.btn-group> :not(.btn-check)+.btn {
-    border-radius: 10px;
-}
-
-main form div:nth-child(6) div button {
-    width: calc(33.333 - 1em);
-    margin: 0.5em;
 }
 
 .btn-primary.btn-lg {
